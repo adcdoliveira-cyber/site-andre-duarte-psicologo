@@ -22,13 +22,17 @@ export default function Header() {
     { name: "Sobre", href: "#sobre" },
     { name: "Como Ajudo", href: "#servicos" },
     { name: "Atendimento", href: "#atendimento" },
+    { name: "Diário", href: "/diario" },
     { name: "Contato", href: "#contato" },
   ];
 
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
-    if (id === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    if (id.startsWith("/")) {
+      if (location === id) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
       return;
     }
     
@@ -69,19 +73,29 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(link.href);
-              }}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => 
+            link.href.startsWith("#") ? (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.href);
+                }}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {link.name}
+              </Link>
+            )
+          )}
           <Button 
             className="bg-primary hover:bg-primary/90 text-white rounded-full px-6"
             onClick={() => scrollToSection("#contato")}
@@ -115,19 +129,30 @@ export default function Header() {
           <X size={24} />
         </button>
         
-        {navLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection(link.href);
-            }}
-            className="text-2xl font-serif font-medium text-foreground hover:text-primary transition-colors"
-          >
-            {link.name}
-          </a>
-        ))}
+        {navLinks.map((link) => 
+          link.href.startsWith("#") ? (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(link.href);
+              }}
+              className="text-2xl font-serif font-medium text-foreground hover:text-primary transition-colors"
+            >
+              {link.name}
+            </a>
+          ) : (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-2xl font-serif font-medium text-foreground hover:text-primary transition-colors"
+            >
+              {link.name}
+            </Link>
+          )
+        )}
         
         <Button 
           className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-lg mt-4"
