@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "wouter";
 import { ArrowRight, Brain, Heart, Home as HomeIcon, MessageCircle, Shield, Sparkles, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -84,8 +85,8 @@ export default function Home() {
                   Agendar Consulta
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button variant="outline" className="border-primary/20 text-primary hover:bg-primary/5 rounded-full px-8 py-6 text-lg bg-white/50 backdrop-blur-sm">
-                  Saiba mais
+                <Button variant="outline" className="border-primary/20 text-primary hover:bg-primary/5 rounded-full px-8 py-6 text-lg bg-white/50 backdrop-blur-sm" asChild>
+                  <Link href="/diario">Conhecer o Diário</Link>
                 </Button>
               </div>
             </div>

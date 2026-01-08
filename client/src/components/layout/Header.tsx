@@ -32,6 +32,9 @@ export default function Header() {
     if (id.startsWith("/")) {
       if (location === id) {
         window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        // Allow normal navigation for non-anchor routes
+        setIsMobileMenuOpen(false);
       }
       return;
     }
@@ -90,6 +93,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.name}
