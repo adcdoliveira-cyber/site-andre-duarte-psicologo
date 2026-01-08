@@ -281,6 +281,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Blog Preview Section */}
+        <BlogPreview />
+
         {/* Contato e Mapa */}
         <section id="contato" className="py-20 bg-secondary/20">
           <div className="container">
@@ -346,5 +349,68 @@ export default function Home() {
 
       <Footer />
     </div>
+  );
+}
+
+function BlogPreview() {
+  const articles = [
+    {
+      title: "Como lidar com a ansiedade",
+      category: "Ansiedade",
+      date: "15 Mai, 2024",
+      image: "https://images.unsplash.com/photo-1474418397713-7ded61d46e18?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      title: "O impacto do sono",
+      category: "Bem-estar",
+      date: "10 Mai, 2024",
+      image: "https://images.unsplash.com/photo-1541480601022-2308c0f02487?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      title: "EMDR: O que é?",
+      category: "Terapia",
+      date: "05 Mai, 2024",
+      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=400"
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-background">
+      <div className="container">
+        <div className="flex justify-between items-end mb-12">
+          <div>
+            <h2 className="font-serif text-3xl md:text-4xl text-primary mb-2">Blog & Artigos</h2>
+            <p className="text-muted-foreground">Conteúdos sobre saúde mental e autocuidado</p>
+          </div>
+          <Button variant="outline" className="rounded-full hidden md:flex" asChild>
+            <Link href="/blog">Ver todos os artigos</Link>
+          </Button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {articles.map((article, i) => (
+            <Card key={i} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-all group">
+              <div className="aspect-video relative overflow-hidden">
+                <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-xs font-semibold text-accent uppercase tracking-wider">{article.category}</span>
+                  <span className="text-xs text-muted-foreground">{article.date}</span>
+                </div>
+                <h3 className="font-serif text-xl text-primary mb-4 group-hover:text-accent transition-colors">{article.title}</h3>
+                <Button variant="link" className="p-0 h-auto text-primary group-hover:text-accent" asChild>
+                  <Link href="/blog">Ler mais <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        <div className="mt-10 md:hidden text-center">
+          <Button variant="outline" className="rounded-full w-full" asChild>
+            <Link href="/blog">Ver todos os artigos</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
   );
 }

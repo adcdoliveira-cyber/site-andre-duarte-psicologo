@@ -23,6 +23,7 @@ export default function Header() {
     { name: "Como Ajudo", href: "#servicos" },
     { name: "Atendimento", href: "#atendimento" },
     { name: "Diário", href: "/diario" },
+    { name: "Blog", href: "/blog" },
     { name: "Contato", href: "#contato" },
   ];
 
