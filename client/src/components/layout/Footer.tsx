@@ -45,7 +45,7 @@ export default function Footer() {
               <a href="#servicos" className="text-primary-foreground/80 text-sm hover:text-white transition-colors">Como Ajudo</a>
               <a href="#atendimento" className="text-primary-foreground/80 text-sm hover:text-white transition-colors">Atendimento</a>
               <a href="/blog" className="text-primary-foreground/80 text-sm hover:text-white transition-colors">Blog & Artigos</a>
-              <a href="/diario" className="text-primary-foreground/80 text-sm hover:text-white transition-colors">Diário de Emoções</a>
+              <a href="/diario" className="text-primary-foreground/80 text-sm hover:text-white transition-colors">Entrar na minha Área</a>
               <a href="#contato" className="text-primary-foreground/80 text-sm hover:text-white transition-colors">Agendar Consulta</a>
             </div>
           </div>

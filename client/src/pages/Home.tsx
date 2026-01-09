@@ -92,7 +92,7 @@ export default function Home() {
                   </Button>
                 </a>
                 <Button variant="outline" className="border-primary/20 text-primary hover:bg-primary/5 rounded-full px-8 py-6 text-lg bg-white/50 backdrop-blur-sm" asChild>
-                  <Link href="/diario">Conhecer o Diário</Link>
+                  <Link href="/diario">Entrar no meu Refúgio</Link>
                 </Button>
               </div>
             </div>

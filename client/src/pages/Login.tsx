@@ -57,7 +57,7 @@ export default function Login() {
       const decoded = decodeJwt(response.credential);
       await loginWithGoogle(decoded);
       toast.success("Login com Google realizado com sucesso!");
-      setLocation("/diario");
+      setLocation("/diario/meu");
     } catch (error) {
       console.error("Google login error:", error);
       toast.error("Erro ao fazer login com Google");
@@ -78,7 +78,7 @@ export default function Login() {
       };
       await loginWithMicrosoft(mockUser);
       toast.success("Login com Microsoft realizado com sucesso!");
-      setLocation("/diario");
+      setLocation("/diario/meu");
     } catch (error) {
       console.error("Microsoft login error:", error);
       toast.error("Erro ao fazer login com Microsoft");
@@ -99,7 +99,7 @@ export default function Login() {
       };
       await loginWithGitHub(mockUser);
       toast.success("Login com GitHub realizado com sucesso!");
-      setLocation("/diario");
+      setLocation("/diario/meu");
     } catch (error) {
       console.error("GitHub login error:", error);
       toast.error("Erro ao fazer login com GitHub");
