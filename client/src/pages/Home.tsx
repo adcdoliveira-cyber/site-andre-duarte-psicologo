@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Brain, Heart, Home as HomeIcon, MessageCircle, Shield, Sparkles, Users } from "lucide-react";
+import { ArrowRight, Brain, Heart, Home as HomeIcon, MapPin, MessageCircle, Shield, Sparkles, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/layout/Header";
@@ -81,10 +81,16 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
-                  Agendar Consulta
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <a 
+                  href="https://wa.me/5521982525626?text=Ol%C3%A1!%20Encontrei%20voc%C3%AA%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es,%20por%20favor."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    Agendar Consulta
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
                 <Button variant="outline" className="border-primary/20 text-primary hover:bg-primary/5 rounded-full px-8 py-6 text-lg bg-white/50 backdrop-blur-sm" asChild>
                   <Link href="/diario">Conhecer o Diário</Link>
                 </Button>
@@ -258,9 +264,18 @@ export default function Home() {
                     Plataforma segura e criptografada
                   </li>
                 </ul>
-                <Button variant="secondary" className="w-full rounded-full">
-                  Saiba mais sobre Online
-                </Button>
+                <a 
+                  href="https://wa.me/5521982525626?text=Ol%C3%A1!%20Encontrei%20voc%C3%AA%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es,%20por%20favor."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button 
+                    variant="secondary" 
+                    className="w-full rounded-full"
+                  >
+                    Saiba mais sobre Online
+                  </Button>
+                </a>
               </div>
 
               {/* Presencial */}
@@ -290,9 +305,11 @@ export default function Home() {
                     Localização acessível no Downtown
                   </li>
                 </ul>
-                <Button className="w-full bg-primary text-white hover:bg-primary/90 rounded-full">
-                  Ver Localização
-                </Button>
+                <a href="#contato">
+                  <Button className="w-full bg-primary text-white hover:bg-primary/90 rounded-full">
+                    Ver Localização
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -342,14 +359,20 @@ export default function Home() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-full py-6 text-lg shadow-md hover:shadow-lg transition-all">
-                  Chamar no WhatsApp
-                </Button>
+                <a 
+                  href="https://wa.me/5521982525626?text=Ol%C3%A1!%20Encontrei%20voc%C3%AA%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es,%20por%20favor."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white rounded-full py-6 text-lg shadow-md hover:shadow-lg transition-all">
+                    Chamar no WhatsApp
+                  </Button>
+                </a>
               </div>
 
               <div className="lg:w-1/2 bg-gray-200 min-h-[400px] relative">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.1166666666666!2d-43.32222222222222!3d-23.000000000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd0a0a0a0a0a0%3A0x0!2sAv.%20das%20Am%C3%A9ricas%2C%20500%20-%20Barra%20da%20Tijuca%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022640-100!5e0!3m2!1sen!2sbr!4v1620000000000!5m2!1sen!2sbr" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.9166666666666!2d-43.32222222222222!3d-23.000000000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd0a0a0a0a0a0%3A0x0!2sAv.%20das%20Am%C3%A9ricas%2C%20500%20-%20Barra%20da%20Tijuca%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022640-100!5e0!3m2!1sen!2sbr!4v1620000000000!5m2!1sen!2sbr" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -358,6 +381,15 @@ export default function Home() {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="absolute inset-0 w-full h-full"
                 ></iframe>
+                <a 
+                  href="https://maps.app.goo.gl/k1biYep6q66rqU3u8" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg flex items-center gap-2 text-primary font-medium hover:bg-white transition-colors border border-primary/10"
+                >
+                  <MapPin className="w-5 h-5 text-accent" />
+                  Abrir no Google Maps
+                </a>
               </div>
             </div>
           </div>

@@ -51,15 +51,23 @@ export default function Footer() {
           </div>
 
           {/* Useful Links Column */}
-          <div className="space-y-6">
+          <div className="space-y-6 lg:col-span-2">
             <h4 className="font-serif text-lg font-medium border-b border-white/20 pb-2 inline-block">Apoio e Saúde Mental</h4>
-            <div className="flex flex-col gap-2">
-              <a href="https://cvv.org.br/links-uteis/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">CVV - Apoio Emocional</a>
-              <a href="http://www.setembroamarelo.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Setembro Amarelo</a>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+              <a href="https://cvv.org.br/links-uteis/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">CVV - Centro de Valorização da Vida</a>
+              <a href="http://www.setembroamarelo.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Movimento Setembro Amarelo</a>
+              <a href="https://www.gov.br/saude" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Ministério da Saúde</a>
               <a href="https://mapasaudemental.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Mapa da Saúde Mental</a>
+              <a href="https://sage.saude.gov.br/paineis/planoCrack/lista_caps.php?output=html&" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">CAPS - Lista do Ministério da Saúde</a>
+              <a href="https://vitaalere.com.br/sobre-o-suicidio/posvencao/grupo-de-sobreviventes/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Grupos de Apoio a Sobreviventes</a>
+              <a href="http://www.abeps.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">ABEPS - Prevenção do Suicídio</a>
+              <a href="https://asecbrasil.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Movimento Saber lidar</a>
               <a href="https://www.podefalar.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Pode falar (13-24 anos)</a>
-              <a href="https://www.gov.br/mulheres/pt-br/ligue180" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Ligue 180 (Segurança)</a>
+              <a href="https://www.gov.br/mulheres/pt-br/ligue180" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Segurança Mulheres - Ligue 180</a>
+              <a href="http://www.samaritans.org" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Samaritanos de Londres</a>
+              <a href="http://www.iasp.info" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">IASP - Prevenção do Suicídio</a>
               <a href="http://www.befrienders.org" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">Befrienders Worldwide</a>
+              <a href="https://www.paho.org/pt" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 text-xs hover:text-white transition-colors">OPAS - Organização Pan-Americana</a>
             </div>
           </div>
 

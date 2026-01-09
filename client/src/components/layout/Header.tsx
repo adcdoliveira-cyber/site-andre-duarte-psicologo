@@ -110,12 +110,15 @@ export default function Header() {
               </Link>
             )
           )}
-          <Button 
-            className="bg-primary hover:bg-primary/90 text-white rounded-full px-6"
-            onClick={() => scrollToSection("#contato")}
+          <a 
+            href="https://wa.me/5521982525626?text=Ol%C3%A1!%20Encontrei%20voc%C3%AA%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es,%20por%20favor."
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Agendar Consulta
-          </Button>
+            <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-6">
+              Agendar Consulta
+            </Button>
+          </a>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -168,12 +171,16 @@ export default function Header() {
           )
         )}
         
-        <Button 
-          className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-lg mt-4"
-          onClick={() => scrollToSection("#contato")}
+        <a 
+          href="https://wa.me/5521982525626?text=Ol%C3%A1!%20Encontrei%20voc%C3%AA%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es,%20por%20favor."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full px-8"
         >
-          Agendar Consulta
-        </Button>
+          <Button className="w-full bg-primary hover:bg-primary/90 text-white rounded-full py-6 text-lg">
+            Agendar Consulta
+          </Button>
+        </a>
       </div>
     </header>
   );
