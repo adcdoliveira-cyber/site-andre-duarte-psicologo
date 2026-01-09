@@ -7,11 +7,8 @@ import ErrorBoundary from "@/components/common/ErrorBoundary";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Home from "./pages/Home";
-import EmotionalDiary from "./pages/EmotionalDiaryAuth";
-import Profile from "./pages/Profile";
-import Login from "./pages/Login";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
+import EmotionalDiaryLanding from "./pages/EmotionalDiary";
+import EmotionalDiaryAuth from "./pages/EmotionalDiaryAuth";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -28,7 +25,8 @@ function Router() {
       <Switch>
         <Route path={"/"} component={Home} />
         <Route path={"/login"} component={Login} />
-        <Route path={"/diario"} component={EmotionalDiary} />
+        <Route path={"/diario"} component={EmotionalDiaryLanding} />
+        <Route path={"/diario/meu"} component={EmotionalDiaryAuth} />
         <Route path={"/perfil"} component={Profile} />
         <Route path={"/blog"} component={Blog} />
         <Route path={"/blog/:id"} component={BlogPost} />

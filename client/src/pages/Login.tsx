@@ -3,7 +3,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Mail, Github } from "lucide-react";
+import { Heart, Mail, Github, X } from "lucide-react";
 import { toast } from "sonner";
 
 declare global {
@@ -24,6 +24,10 @@ export default function Login() {
       setLocation("/diario");
     }
   }, [isAuthenticated, setLocation]);
+
+  const handleClose = () => {
+    setLocation("/diario");
+  };
 
   // Carregar Google Sign-In
   useEffect(() => {
@@ -117,7 +121,15 @@ export default function Login() {
         </div>
 
         {/* Login Card */}
-        <Card className="border-none shadow-lg">
+        <Card className="border-none shadow-lg relative">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="absolute right-4 top-4 rounded-full z-10"
+            onClick={handleClose}
+          >
+            <X className="w-5 h-5" />
+          </Button>
           <CardHeader>
             <CardTitle>Escolha uma forma de login</CardTitle>
             <CardDescription>Seus dados serão armazenados com segurança</CardDescription>
