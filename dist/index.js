@@ -100,13 +100,18 @@ function getUserById(userId) {
 
 // server/routes/auth.ts
 import jwt from "jsonwebtoken";
+import fetch from "node-fetch";
 var router = Router();
 var JWT_SECRET = process.env.JWT_SECRET || "your-secret-key-change-in-production";
+var GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || "your-google-client-secret";
 router.post("/auth/google", (req, res) => {
   try {
     const { id, email, name, picture } = req.body;
     if (!id || !email || !name) {
       return res.status(400).json({ error: "Missing required fields" });
+    }
+    if (!email.includes("@")) {
+      return res.status(400).json({ error: "Invalid email format" });
     }
     const user = findOrCreateUser({
       id,
@@ -115,14 +120,14 @@ router.post("/auth/google", (req, res) => {
       avatar: picture,
       provider: "google"
     });
-    const token = jwt.sign(
-      { userId: user.id, email: user.email },
+    const appToken = jwt.sign(
+      { userId: user.id, email: user.email, provider: "google" },
       JWT_SECRET,
       { expiresIn: "7d" }
     );
     res.json({
       success: true,
-      token,
+      token: appToken,
       user: {
         id: user.id,
         email: user.email,
@@ -132,6 +137,48 @@ router.post("/auth/google", (req, res) => {
     });
   } catch (error) {
     console.error("Google auth error:", error);
+    res.status(500).json({ error: "Authentication failed" });
+  }
+});
+router.post("/auth/google/token", async (req, res) => {
+  try {
+    const { idToken } = req.body;
+    if (!idToken) {
+      return res.status(400).json({ error: "ID token is required" });
+    }
+    const parts = idToken.split(".");
+    if (parts.length !== 3) {
+      return res.status(400).json({ error: "Invalid token format" });
+    }
+    const payload = JSON.parse(Buffer.from(parts[1], "base64").toString());
+    const { sub, email, name, picture } = payload;
+    if (!sub || !email || !name) {
+      return res.status(400).json({ error: "Missing required fields in token" });
+    }
+    const user = findOrCreateUser({
+      id: sub,
+      email,
+      name,
+      avatar: picture,
+      provider: "google"
+    });
+    const appToken = jwt.sign(
+      { userId: user.id, email: user.email, provider: "google" },
+      JWT_SECRET,
+      { expiresIn: "7d" }
+    );
+    res.json({
+      success: true,
+      token: appToken,
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        avatar: user.avatar
+      }
+    });
+  } catch (error) {
+    console.error("Google token auth error:", error);
     res.status(500).json({ error: "Authentication failed" });
   }
 });
@@ -149,7 +196,7 @@ router.post("/auth/microsoft", (req, res) => {
       provider: "microsoft"
     });
     const token = jwt.sign(
-      { userId: user.id, email: user.email },
+      { userId: user.id, email: user.email, provider: "microsoft" },
       JWT_SECRET,
       { expiresIn: "7d" }
     );
@@ -182,7 +229,7 @@ router.post("/auth/github", (req, res) => {
       provider: "github"
     });
     const token = jwt.sign(
-      { userId: user.id, email: user.email },
+      { userId: user.id, email: user.email, provider: "github" },
       JWT_SECRET,
       { expiresIn: "7d" }
     );
