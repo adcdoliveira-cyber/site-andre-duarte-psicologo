@@ -8,7 +8,7 @@ import Footer from "@/components/layout/Footer";
 
 import andreFotoPerfil from "@assets/Andre-Psicólogo-RJ-Barra-da-Tijuca-TCC-ANSIEDADE-NAMORO-online_1767929734996.png";
 import andreFotoAjudar from "@assets/André_Duarte_Psicologo_online_rio_de_janeiro_1767930145969.jpg";
-import heroConsultorio from "@assets/CONSULTORIO_ANDRE_DUARTE_PSICOLOGO_ONLINE_1767931511099.jpg";
+import heroConsultorio from "@assets/CONSULTORIO_ANDRE_DUARTE_PSICOLOGO_ONLINE_RIO_DE_JANEIRO_1767931658870.jpeg";
 
 export default function Home() {
   useEffect(() => {
