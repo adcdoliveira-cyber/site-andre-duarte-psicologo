@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
+import andreFotoPerfil from "@assets/Andre-Psicólogo-RJ-Barra-da-Tijuca-TCC-ANSIEDADE-NAMORO-online_1767929734996.png";
+
 export default function Home() {
   useEffect(() => {
     // Smooth scroll for anchor links
@@ -107,7 +109,7 @@ export default function Home() {
               <div className="relative order-2 lg:order-1">
                 <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto lg:mx-0 mask-organic-1">
                   <img 
-                    src="/images/andre_foto_perfil.webp" 
+                    src={andreFotoPerfil} 
                     alt="Psicólogo André Duarte" 
                     className="w-full h-full object-cover"
                   />
