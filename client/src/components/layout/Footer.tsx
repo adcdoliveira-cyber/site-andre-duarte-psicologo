@@ -16,7 +16,7 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <h3 className="font-serif text-xl font-medium">André Duarte</h3>
+                <h3 className="font-serif text-xl font-medium">Andre Duarte Cesar de Oliveira</h3>
                 <p className="text-xs opacity-80 tracking-wider uppercase">Psicólogo Clínico</p>
               </div>
             </div>

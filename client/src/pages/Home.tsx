@@ -71,10 +71,6 @@ export default function Home() {
 
           <div className="container relative z-10 py-12 md:py-24">
             <div className="max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                CRP: 05 71020
-              </div>
               
               <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium leading-tight text-primary mb-6">
                 Compreender e construir <span className="italic text-accent">novos caminhos</span>.
