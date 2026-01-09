@@ -107,7 +107,7 @@ export default function Home() {
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
               <div className="relative order-2 lg:order-1">
-                <div className="relative z-10 overflow-hidden shadow-2xl aspect-square max-w-md mx-auto lg:mx-0" style={{ clipPath: 'path("M10,100 Q10,10 100,10 T190,100 Q190,190 100,190 T10,100")' }}>
+                <div className="relative z-10 overflow-hidden shadow-2xl aspect-square max-w-md mx-auto lg:mx-0" style={{ clipPath: 'path("M20,100 C20,40 80,20 100,20 C120,20 180,40 180,100 C180,160 120,180 100,180 C80,180 20,160 20,100 Z")' }}>
                   <img 
                     src={andreFotoPerfil} 
                     alt="Psicólogo André Duarte" 
