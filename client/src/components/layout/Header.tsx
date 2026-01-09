@@ -17,15 +17,19 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Início", href: "/" },
-    { name: "Sobre", href: "#sobre" },
-    { name: "Como Ajudo", href: "#servicos" },
-    { name: "Atendimento", href: "#atendimento" },
-    { name: "Diário", href: "/diario" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contato", href: "#contato" },
-  ];
+  const navLinks = location.startsWith("/blog") || location.startsWith("/diario") 
+    ? [
+        { name: "Início", href: "/" },
+      ]
+    : [
+        { name: "Início", href: "/" },
+        { name: "Sobre", href: "#sobre" },
+        { name: "Como Ajudo", href: "#servicos" },
+        { name: "Atendimento", href: "#atendimento" },
+        { name: "Diário", href: "/diario" },
+        { name: "Blog", href: "/blog" },
+        { name: "Contato", href: "#contato" },
+      ];
 
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
