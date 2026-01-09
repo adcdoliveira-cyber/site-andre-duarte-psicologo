@@ -7,6 +7,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 import andreFotoPerfil from "@assets/Andre-Psicólogo-RJ-Barra-da-Tijuca-TCC-ANSIEDADE-NAMORO-online_1767929734996.png";
+import andreFotoAjudar from "@assets/André_Duarte_Psicologo_online_rio_de_janeiro_1767930145969.jpg";
 
 export default function Home() {
   useEffect(() => {
@@ -153,6 +154,18 @@ export default function Home() {
         <section id="servicos" className="py-20 md:py-32 bg-background">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+              <div className="relative w-32 h-32 mx-auto mb-6">
+                <div className="w-full h-full rounded-full overflow-hidden border-4 border-primary/10 shadow-lg">
+                  <img 
+                    src={andreFotoAjudar} 
+                    alt="André Duarte" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-2 -right-2 bg-accent text-white p-2 rounded-full shadow-md">
+                  <Sparkles className="w-4 h-4" />
+                </div>
+              </div>
               <h2 className="font-serif text-3xl md:text-5xl text-primary">Como posso ajudar?</h2>
               <p className="text-lg text-muted-foreground">
                 A psicoterapia pode ajudar em momentos em que o sofrimento começa a ocupar espaço demais na vida, mesmo quando não há um motivo claro ou recente para isso.
