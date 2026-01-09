@@ -107,11 +107,11 @@ export default function Home() {
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
               <div className="relative order-2 lg:order-1">
-                <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto lg:mx-0 mask-organic-1">
+                <div className="relative z-10 overflow-hidden shadow-2xl aspect-square max-w-md mx-auto lg:mx-0" style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}>
                   <img 
                     src={andreFotoPerfil} 
                     alt="Psicólogo André Duarte" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[center_20%]"
                   />
                 </div>
                 {/* Decorative elements */}
