@@ -133,6 +133,90 @@ Reconhecer esses padrões é o caminho para construir relações mais saudáveis
     readTime: "6 min",
     image: "https://images.unsplash.com/photo-1516589174184-c68d8e5f44df?auto=format&fit=crop&q=80&w=800",
     bibliography: []
+  },
+  {
+    id: "8",
+    title: "Psicologia Clínica: Um Espaço de Transformação",
+    description: "Entenda como a psicologia clínica pode ajudar na compreensão de si mesmo e na construção de uma vida mais autêntica.",
+    content: `A psicologia clínica é muito mais do que apenas conversar sobre problemas. É um processo científico e humano de exploração profunda da psique. Através da relação terapêutica, o indivíduo encontra um espaço seguro para desconstruir padrões limitantes e reconstruir sua narrativa pessoal.
+
+Neste espaço, trabalhamos não apenas os sintomas, mas as raízes do sofrimento, permitindo que a pessoa desenvolva maior autonomia e resiliência diante dos desafios da vida.`,
+    category: "Psicologia Clínica",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "9",
+    title: "Trauma: Quando o Passado Permanece Presente",
+    description: "O trauma não é apenas o que aconteceu, mas como seu sistema nervoso processou a experiência.",
+    content: `O trauma psicológico ocorre quando uma experiência sobrecarrega a capacidade do indivíduo de processar o que está acontecendo. Isso pode resultar em memórias fragmentadas que continuam a disparar respostas de estresse no presente.
+
+Compreender o trauma sob a ótica da neurobiologia nos permite usar ferramentas específicas para ajudar o cérebro a integrar essas experiências, transformando memórias traumáticas em memórias narrativas sem a carga emocional avassaladora.`,
+    category: "Trauma",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1499209974431-9ddd3e2f0dc0?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "10",
+    title: "Ansiedade: Compreendendo o Sistema de Alerta",
+    description: "A ansiedade é um sinal do seu corpo tentando te proteger. Aprenda a dialogar com esse sistema.",
+    content: `A ansiedade muitas vezes é vista como uma inimiga, mas originalmente ela é um mecanismo de sobrevivência. O problema surge quando esse alarme toca o tempo todo, mesmo sem perigo real.
+
+Na terapia, aprendemos a identificar os gatilhos da ansiedade e a desenvolver estratégias de regulação emocional que acalmam o sistema nervoso, permitindo que você retome o controle da sua vida.`,
+    category: "Ansiedade",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1474418397713-7ded61d46e18?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "11",
+    title: "EMDR: Reprocessamento e Dessensibilização",
+    description: "Conheça a técnica que utiliza movimentos oculares para tratar traumas e fobias de forma eficaz.",
+    content: `O EMDR (Eye Movement Desensitization and Reprocessing) é uma das abordagens mais estudadas e eficazes para o tratamento de traumas. Através da estimulação bilateral, ajudamos o cérebro a 'desbloquear' memórias traumáticas.
+
+Este processo permite que a carga emocional negativa associada ao evento seja reduzida, possibilitando uma nova perspectiva mais adaptativa e saudável sobre o ocorrido.`,
+    category: "EMDR",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "12",
+    title: "IFS: O Sistema da Família Interna",
+    description: "Descubra como as diferentes 'partes' de você interagem e como encontrar o seu 'Self' central.",
+    content: `O modelo IFS (Internal Family Systems) propõe que nossa mente é composta por várias subpersonalidades ou 'partes'. Algumas partes tentam nos proteger, enquanto outras carregam feridas do passado.
+
+O objetivo da terapia IFS é ajudar o indivíduo a acessar seu 'Self' — um núcleo de calma, clareza e compaixão — para liderar e curar essas diferentes partes internas, trazendo harmonia ao sistema psíquico.`,
+    category: "IFS",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1526069631228-723c945bea6b?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "13",
+    title: "Abordagem Humanista: O Foco na Pessoa",
+    description: "Uma visão da psicologia que valoriza a experiência subjetiva e o potencial de crescimento de cada ser humano.",
+    content: `A abordagem humanista coloca a pessoa no centro do processo terapêutico. Acreditamos que cada indivíduo possui uma tendência inata para a autorrealização e o crescimento.
+
+O papel do terapeuta é oferecer empatia, aceitação incondicional e autenticidade, criando o solo fértil necessário para que o cliente possa florescer e encontrar seus próprios caminhos.`,
+    category: "Humanista",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1516589174184-c68d8e5f44df?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
   }
 ];
 

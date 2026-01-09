@@ -142,10 +142,19 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-wrap gap-3">
-                  {["Psicologia Clínica", "Trauma", "Ansiedade", "EMDR", "IFS", "Humanista"].map((tag) => (
-                    <span key={tag} className="px-4 py-2 bg-white rounded-full text-sm text-primary border border-primary/10 shadow-sm">
-                      {tag}
-                    </span>
+                  {[
+                    { name: "Psicologia Clínica", id: "8" },
+                    { name: "Trauma", id: "9" },
+                    { name: "Ansiedade", id: "10" },
+                    { name: "EMDR", id: "11" },
+                    { name: "IFS", id: "12" },
+                    { name: "Humanista", id: "13" }
+                  ].map((tag) => (
+                    <Link key={tag.id} href={`/blog/${tag.id}`}>
+                      <span className="px-4 py-2 bg-white rounded-full text-sm text-primary border border-primary/10 shadow-sm hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 cursor-pointer inline-block">
+                        {tag.name}
+                      </span>
+                    </Link>
                   ))}
                 </div>
               </div>
