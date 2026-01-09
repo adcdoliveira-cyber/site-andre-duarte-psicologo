@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 
 import andreFotoPerfil from "@assets/Andre-Psicólogo-RJ-Barra-da-Tijuca-TCC-ANSIEDADE-NAMORO-online_1767929734996.png";
 import andreFotoAjudar from "@assets/André_Duarte_Psicologo_online_rio_de_janeiro_1767930145969.jpg";
+import heroConsultorio from "@assets/CONSULTORIO_ANDRE_DUARTE_PSICOLOGO_ONLINE_1767931511099.jpg";
 
 export default function Home() {
   useEffect(() => {
@@ -61,7 +62,7 @@ export default function Home() {
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/images/hero_consultorio.webp" 
+              src={heroConsultorio} 
               alt="Consultório de Psicologia Acolhedor" 
               className="w-full h-full object-cover object-center"
             />
