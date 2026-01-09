@@ -158,16 +158,18 @@ export default function Blog() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article) => (
               <Card key={article.id} className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col">
-                <div className="aspect-video relative overflow-hidden">
-                  <img 
-                    src={article.image} 
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                  <Badge className="absolute top-4 left-4 bg-primary/90 text-white">
-                    {article.category}
-                  </Badge>
-                </div>
+                  <Link href={`/blog/${article.id}`} className="cursor-pointer">
+                    <div className="aspect-video relative overflow-hidden">
+                      <img 
+                        src={article.image} 
+                        alt={article.title}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                      <Badge className="absolute top-4 left-4 bg-primary/90 text-white">
+                        {article.category}
+                      </Badge>
+                    </div>
+                  </Link>
                 <CardHeader>
                   <div className="flex items-center gap-4 text-xs text-muted-foreground mb-2">
                     <span className="flex items-center gap-1">
@@ -179,9 +181,11 @@ export default function Blog() {
                       {article.readTime}
                     </span>
                   </div>
-                  <CardTitle className="font-serif text-2xl text-primary leading-tight hover:text-accent transition-colors cursor-pointer">
-                    {article.title}
-                  </CardTitle>
+                  <Link href={`/blog/${article.id}`}>
+                    <CardTitle className="font-serif text-2xl text-primary leading-tight hover:text-accent transition-colors cursor-pointer">
+                      {article.title}
+                    </CardTitle>
+                  </Link>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col">
                   <CardDescription className="text-base line-clamp-3 mb-6">

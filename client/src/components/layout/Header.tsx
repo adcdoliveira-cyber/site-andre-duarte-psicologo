@@ -17,7 +17,12 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = location.startsWith("/blog") || location.startsWith("/diario") 
+  const navLinks = location.startsWith("/blog/") 
+    ? [
+        { name: "Início", href: "/" },
+        { name: "Voltar ao Blog", href: "/blog" },
+      ]
+    : location.startsWith("/blog") || location.startsWith("/diario") 
     ? [
         { name: "Início", href: "/" },
       ]
