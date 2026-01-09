@@ -217,6 +217,76 @@ O papel do terapeuta é oferecer empatia, aceitação incondicional e autenticid
     readTime: "5 min",
     image: "https://images.unsplash.com/photo-1516589174184-c68d8e5f44df?auto=format&fit=crop&q=80&w=800",
     bibliography: []
+  },
+  {
+    id: "14",
+    title: "Teoria Polivagal: A Ciência da Segurança",
+    description: "Entenda como seu sistema nervoso responde ao estresse e como encontrar o caminho de volta à calma e conexão.",
+    content: `A Teoria Polivagal, desenvolvida pelo Dr. Stephen Porges, revolucionou nossa compreensão do sistema nervoso autônomo. Ela nos ensina que nosso corpo está constantemente escaneando o ambiente em busca de sinais de perigo ou segurança (neurocepção).
+
+Quando nos sentimos seguros, nosso sistema de engajamento social é ativado, permitindo conexão e cura. Compreender esses estados nos ajuda a regular nossas respostas emocionais e a construir uma sensação de segurança interna durouros.`,
+    category: "Neurociência",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "15",
+    title: "Burnout: Quando o Trabalho Esgota a Mente",
+    description: "Identifique os sinais do esgotamento profissional e aprenda estratégias para recuperar seu equilíbrio e saúde.",
+    content: `O Burnout não é apenas cansaço; é um estado de exaustão física, emocional e mental causado por estresse prolongado no trabalho. Os sinais incluem despersonalização, redução da eficácia e um sentimento de vazio.
+
+A recuperação exige mais do que apenas férias; envolve estabelecer limites saudáveis, reavaliar prioridades e, muitas vezes, um acompanhamento terapêutico para reconstruir a relação com a vida profissional e pessoal.`,
+    category: "Saúde Mental",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "16",
+    title: "O Processo do Luto: Honrando a Dor",
+    description: "O luto é uma resposta natural à perda. Entenda suas fases e como atravessar esse período com autocompaixão.",
+    content: `O luto não é um caminho linear, mas um processo individual e profundo de adaptação a uma nova realidade sem algo ou alguém significativo. Não existe um tempo 'certo' para o luto.
+
+Permitir-se sentir a dor, sem julgamentos, é fundamental para a integração da perda. A terapia oferece um suporte essencial para que o luto possa ser vivido de forma saudável, transformando a dor aguda em uma saudade integrada à vida.`,
+    category: "Emoções",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1516589174184-c68d8e5f44df?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "17",
+    title: "Regulação Emocional: Navegando nas Ondas",
+    description: "Aprenda técnicas práticas para lidar com emoções intensas sem ser engolido por elas.",
+    content: `Regulação emocional não significa suprimir o que sentimos, mas sim desenvolver a capacidade de manejar a intensidade das nossas emoções. É como aprender a surfar em vez de tentar parar as ondas.
+
+Práticas de mindfulness, respiração consciente e a identificação precoce de gatilhos são ferramentas poderosas que nos permitem responder às situações em vez de apenas reagir impulsivamente a elas.`,
+    category: "Bem-estar",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1499209974431-9ddd3e2f0dc0?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "18",
+    title: "A Importância do Autocuidado Real",
+    description: "Autocuidado vai além de um banho relaxante; trata-se de manter um compromisso ético com sua própria saúde mental.",
+    content: `Muitas vezes o autocuidado é comercializado como algo superficial, mas o verdadeiro autocuidado envolve decisões difíceis: dizer não, estabelecer limites, dormir o suficiente e buscar ajuda profissional quando necessário.
+
+É um ato de respeito por si mesmo que sustenta nossa capacidade de cuidar dos outros e de realizar nossos projetos de vida com vitalidade e propósito.`,
+    category: "Bem-estar",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
   }
 ];
 
