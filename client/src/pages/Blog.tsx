@@ -287,6 +287,34 @@ Práticas de mindfulness, respiração consciente e a identificação precoce de
     readTime: "5 min",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
     bibliography: []
+  },
+  {
+    id: "19",
+    title: "Terapia Cognitivo-Comportamental: Reestruturando Pensamentos",
+    description: "Conheça a TCC, uma abordagem focada em identificar e modificar padrões de pensamento e comportamento para melhorar o bem-estar.",
+    content: `A Terapia Cognitivo-Comportamental (TCC) baseia-se na ideia de que nossos pensamentos, sentimentos e comportamentos estão interconectados. Ao identificar pensamentos automáticos disfuncionais, podemos trabalhar para reestruturá-los de forma mais realista e saudável.
+
+É uma abordagem prática, estruturada e focada no presente, sendo extremamente eficaz para o tratamento de ansiedade, depressão e diversos outros transtornos, ajudando o paciente a desenvolver habilidades para lidar com seus desafios de forma autônoma.`,
+    category: "TCC",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "20",
+    title: "Mindfulness: A Arte de Estar Presente",
+    description: "Descubra como a prática da atenção plena pode reduzir o estresse e aumentar a clareza mental no seu dia a dia.",
+    content: `Mindfulness, ou Atenção Plena, é a prática de estar intencionalmente presente no momento atual, com uma atitude de curiosidade e sem julgamento. Em um mundo cada vez mais acelerado, essa prática nos ajuda a sair do 'piloto automático'.
+
+Estudos mostram que o Mindfulness pode reduzir significativamente os níveis de cortisol (o hormônio do estresse), melhorar a concentração e promover uma maior regulação emocional, permitindo que respondamos às situações com mais consciência e menos impulsividade.`,
+    category: "Mindfulness",
+    author: "André Duarte",
+    date: "09 Jan, 2026",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
   }
 ];
 
