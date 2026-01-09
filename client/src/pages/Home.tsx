@@ -153,23 +153,32 @@ export default function Home() {
         {/* Como Posso Ajudar Section */}
         <section id="servicos" className="py-20 md:py-32 bg-background">
           <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <div className="relative w-32 h-32 mx-auto mb-6">
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-primary/10 shadow-lg">
-                  <img 
-                    src={andreFotoAjudar} 
-                    alt="André Duarte" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-2 -right-2 bg-accent text-white p-2 rounded-full shadow-md">
-                  <Sparkles className="w-4 h-4" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+              <div className="space-y-6">
+                <h2 className="font-serif text-3xl md:text-5xl text-primary">Como posso ajudar?</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  A psicoterapia pode ajudar em momentos em que o sofrimento começa a ocupar espaço demais na vida, mesmo quando não há um motivo claro ou recente para isso.
+                </p>
+                <div className="flex items-center gap-4 p-4 bg-secondary/20 rounded-2xl">
+                  <div className="bg-white p-3 rounded-full shadow-sm">
+                    <Sparkles className="w-6 h-6 text-accent" />
+                  </div>
+                  <p className="text-muted-foreground text-sm">
+                    O objetivo não é apenas aliviar sintomas, mas compreender como o sofrimento se organiza e criar condições para mudanças mais profundas e sustentáveis.
+                  </p>
                 </div>
               </div>
-              <h2 className="font-serif text-3xl md:text-5xl text-primary">Como posso ajudar?</h2>
-              <p className="text-lg text-muted-foreground">
-                A psicoterapia pode ajudar em momentos em que o sofrimento começa a ocupar espaço demais na vida, mesmo quando não há um motivo claro ou recente para isso.
-              </p>
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+                  <img 
+                    src={andreFotoAjudar} 
+                    alt="Psicólogo André Duarte em sessão" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                {/* Decorative element */}
+                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-accent/10 rounded-full blur-2xl -z-10"></div>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -184,21 +193,16 @@ export default function Home() {
                 
                 return (
                   <Link key={index} href={articleId ? `/blog/${articleId}` : "/blog"}>
-                    <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white group overflow-hidden cursor-pointer h-full">
-                      <CardContent className="p-8 space-y-4 relative h-full">
-                        <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/30 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-                        
-                        <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 relative z-10">
+                    <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white group overflow-hidden cursor-pointer h-full">
+                      <CardContent className="p-6 space-y-4 relative h-full">
+                        <div className="w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                           {item.icon}
                         </div>
                         
-                        <h3 className="font-serif text-xl font-medium text-primary pt-2">{item.title}</h3>
+                        <h3 className="font-serif text-lg font-medium text-primary">{item.title}</h3>
                         <p className="text-muted-foreground text-sm leading-relaxed">
                           {item.description}
                         </p>
-                        <div className="pt-2 text-accent font-medium text-sm flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                          Saber mais <ArrowRight className="w-4 h-4" />
-                        </div>
                       </CardContent>
                     </Card>
                   </Link>
@@ -206,21 +210,7 @@ export default function Home() {
               })}
             </div>
 
-            <div className="mt-16 text-center">
-              <div className="inline-block p-8 bg-secondary/20 rounded-2xl max-w-4xl">
-                <div className="flex flex-col md:flex-row items-center gap-6 text-left">
-                  <div className="bg-white p-4 rounded-full shadow-sm shrink-0">
-                    <Sparkles className="w-8 h-8 text-accent" />
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-xl text-primary mb-2">Abordagem Integrativa</h4>
-                    <p className="text-muted-foreground">
-                      O objetivo não é apenas aliviar sintomas, mas compreender como o sofrimento se organiza e criar condições para mudanças mais profundas e sustentáveis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Removed redundant section */}
           </div>
         </section>
 
