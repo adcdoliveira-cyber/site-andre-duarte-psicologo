@@ -14,7 +14,8 @@ async function initDb() {
       name TEXT NOT NULL,
       avatar TEXT,
       provider TEXT NOT NULL,
-      provider_id TEXT UNIQUE NOT NULL,
+      provider_id TEXT UNIQUE,
+      password_hash TEXT,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
       updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
     )

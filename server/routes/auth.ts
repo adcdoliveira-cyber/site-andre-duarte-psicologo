@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import { findOrCreateUser, getUserById } from "../auth/oauth";
+import { registerUser, authenticateUser } from "../auth/local";
 import jwt from "jsonwebtoken";
 import fetch from "node-fetch";
 
@@ -250,6 +251,84 @@ router.get("/auth/me", (req: Request, res: Response) => {
   } catch (error) {
     console.error("Auth verification error:", error);
     res.status(401).json({ error: "Invalid token" });
+  }
+});
+
+/**
+ * Registro de novo usuário com email e senha
+ */
+router.post("/auth/register", async (req: Request, res: Response) => {
+  try {
+    const { email, name, password } = req.body;
+
+    // Validar campos obrigatórios
+    if (!email || !name || !password) {
+      return res.status(400).json({ error: "Todos os campos são obrigatórios" });
+    }
+
+    // Registrar usuário
+    const user = await registerUser({ email, name, password });
+
+    // Criar JWT token
+    const token = jwt.sign(
+      { userId: user.id, email: user.email, provider: "local" },
+      JWT_SECRET,
+      { expiresIn: "7d" }
+    );
+
+    res.json({
+      success: true,
+      token,
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        avatar: user.avatar,
+      },
+    });
+  } catch (error) {
+    console.error("Registration error:", error);
+    const errorMessage = error instanceof Error ? error.message : "Erro ao registrar usuário";
+    res.status(400).json({ error: errorMessage });
+  }
+});
+
+/**
+ * Login com email e senha
+ */
+router.post("/auth/login", async (req: Request, res: Response) => {
+  try {
+    const { email, password } = req.body;
+
+    // Validar campos obrigatórios
+    if (!email || !password) {
+      return res.status(400).json({ error: "Email e senha são obrigatórios" });
+    }
+
+    // Autenticar usuário
+    const user = await authenticateUser(email, password);
+
+    // Criar JWT token
+    const token = jwt.sign(
+      { userId: user.id, email: user.email, provider: "local" },
+      JWT_SECRET,
+      { expiresIn: "7d" }
+    );
+
+    res.json({
+      success: true,
+      token,
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        avatar: user.avatar,
+      },
+    });
+  } catch (error) {
+    console.error("Login error:", error);
+    const errorMessage = error instanceof Error ? error.message : "Erro ao fazer login";
+    res.status(401).json({ error: errorMessage });
   }
 });
 

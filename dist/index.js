@@ -98,6 +98,75 @@ function getUserById(userId) {
   return null;
 }
 
+// server/auth/local.ts
+import bcrypt from "bcryptjs";
+async function registerUser(userData) {
+  const db = getDatabase();
+  const existingUser = db.exec(
+    `SELECT * FROM users WHERE email = ?`,
+    [userData.email]
+  );
+  if (existingUser.length > 0 && existingUser[0].values.length > 0) {
+    throw new Error("Email j\xE1 cadastrado");
+  }
+  if (!userData.email.includes("@")) {
+    throw new Error("Email inv\xE1lido");
+  }
+  if (userData.password.length < 6) {
+    throw new Error("A senha deve ter no m\xEDnimo 6 caracteres");
+  }
+  if (!userData.name || userData.name.trim().length < 2) {
+    throw new Error("Nome deve ter no m\xEDnimo 2 caracteres");
+  }
+  const passwordHash = await bcrypt.hash(userData.password, 10);
+  db.run(
+    `INSERT INTO users (email, name, password_hash, provider, provider_id) VALUES (?, ?, ?, ?, ?)`,
+    [userData.email, userData.name.trim(), passwordHash, "local", null]
+  );
+  saveDatabase();
+  const result = db.exec(
+    `SELECT id, email, name, avatar, provider FROM users WHERE email = ?`,
+    [userData.email]
+  );
+  if (result.length > 0 && result[0].values.length > 0) {
+    const row = result[0].values[0];
+    return {
+      id: row[0],
+      email: row[1],
+      name: row[2],
+      avatar: row[3],
+      provider: row[4]
+    };
+  }
+  throw new Error("Erro ao criar usu\xE1rio");
+}
+async function authenticateUser(email, password) {
+  const db = getDatabase();
+  const result = db.exec(
+    `SELECT id, email, name, avatar, provider, password_hash FROM users WHERE email = ? AND provider = ?`,
+    [email, "local"]
+  );
+  if (result.length === 0 || result[0].values.length === 0) {
+    throw new Error("Email ou senha incorretos");
+  }
+  const row = result[0].values[0];
+  const passwordHash = row[5];
+  if (!passwordHash) {
+    throw new Error("Usu\xE1rio n\xE3o possui senha cadastrada");
+  }
+  const isPasswordValid = await bcrypt.compare(password, passwordHash);
+  if (!isPasswordValid) {
+    throw new Error("Email ou senha incorretos");
+  }
+  return {
+    id: row[0],
+    email: row[1],
+    name: row[2],
+    avatar: row[3],
+    provider: row[4]
+  };
+}
+
 // server/routes/auth.ts
 import jwt from "jsonwebtoken";
 import fetch from "node-fetch";
@@ -271,6 +340,62 @@ router.get("/auth/me", (req, res) => {
   } catch (error) {
     console.error("Auth verification error:", error);
     res.status(401).json({ error: "Invalid token" });
+  }
+});
+router.post("/auth/register", async (req, res) => {
+  try {
+    const { email, name, password } = req.body;
+    if (!email || !name || !password) {
+      return res.status(400).json({ error: "Todos os campos s\xE3o obrigat\xF3rios" });
+    }
+    const user = await registerUser({ email, name, password });
+    const token = jwt.sign(
+      { userId: user.id, email: user.email, provider: "local" },
+      JWT_SECRET,
+      { expiresIn: "7d" }
+    );
+    res.json({
+      success: true,
+      token,
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        avatar: user.avatar
+      }
+    });
+  } catch (error) {
+    console.error("Registration error:", error);
+    const errorMessage = error instanceof Error ? error.message : "Erro ao registrar usu\xE1rio";
+    res.status(400).json({ error: errorMessage });
+  }
+});
+router.post("/auth/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ error: "Email e senha s\xE3o obrigat\xF3rios" });
+    }
+    const user = await authenticateUser(email, password);
+    const token = jwt.sign(
+      { userId: user.id, email: user.email, provider: "local" },
+      JWT_SECRET,
+      { expiresIn: "7d" }
+    );
+    res.json({
+      success: true,
+      token,
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        avatar: user.avatar
+      }
+    });
+  } catch (error) {
+    console.error("Login error:", error);
+    const errorMessage = error instanceof Error ? error.message : "Erro ao fazer login";
+    res.status(401).json({ error: errorMessage });
   }
 });
 router.post("/auth/logout", (req, res) => {

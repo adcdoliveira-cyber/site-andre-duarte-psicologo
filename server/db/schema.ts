@@ -10,8 +10,9 @@ export const users = sqliteTable("users", {
   email: text("email").unique().notNull(),
   name: text("name").notNull(),
   avatar: text("avatar"), // URL da foto do perfil
-  provider: text("provider").notNull(), // 'google', 'microsoft', 'github'
-  providerId: text("provider_id").notNull().unique(), // ID do provedor
+  provider: text("provider").notNull(), // 'google', 'microsoft', 'github', 'local'
+  providerId: text("provider_id").unique(), // ID do provedor (null para local)
+  passwordHash: text("password_hash"), // Hash da senha para autenticação local
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`).notNull(),
   updatedAt: text("updated_at").default(sql`CURRENT_TIMESTAMP`).notNull(),
 });
