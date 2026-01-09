@@ -1,14 +1,12 @@
-import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Link } from "wouter";
-import { ArrowLeft, Calendar, Clock, User, ArrowRight, ExternalLink, BookOpen } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, ArrowRight } from "lucide-react";
 
-const articles = [
+export const articles = [
   {
     id: "1",
     title: "Como lidar com a ansiedade no dia a dia",
@@ -83,8 +81,6 @@ Muitas vezes, experiências difíceis não são devidamente processadas e contin
 ];
 
 export default function Blog() {
-  const [selectedArticle, setSelectedArticle] = useState<typeof articles[0] | null>(null);
-
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
@@ -143,55 +139,12 @@ export default function Blog() {
                       <span className="text-sm font-medium">{article.author}</span>
                     </div>
                     
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button variant="ghost" className="text-primary hover:text-accent p-0 h-auto group" onClick={() => setSelectedArticle(article)}>
-                          Ler mais
-                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
-                        <DialogHeader>
-                          <div className="flex items-center gap-3 mb-2">
-                            <Badge variant="outline" className="text-accent border-accent/20">{article.category}</Badge>
-                            <span className="text-xs text-muted-foreground">{article.date} • {article.readTime}</span>
-                          </div>
-                          <DialogTitle className="font-serif text-3xl text-primary">{article.title}</DialogTitle>
-                        </DialogHeader>
-                        <div className="space-y-6 pt-4">
-                          <img 
-                            src={article.image} 
-                            alt={article.title} 
-                            className="w-full aspect-video object-cover rounded-xl shadow-md"
-                          />
-                          <div className="prose prose-slate max-w-none text-muted-foreground leading-relaxed whitespace-pre-wrap">
-                            {article.content}
-                          </div>
-                          
-                          <div className="pt-8 border-t border-primary/10">
-                            <h4 className="flex items-center gap-2 font-serif text-xl text-primary mb-4">
-                              <BookOpen className="w-5 h-5 text-accent" />
-                              Referências e Bibliografia
-                            </h4>
-                            <ul className="space-y-3">
-                              {article.bibliography.map((ref, idx) => (
-                                <li key={idx} className="flex items-center justify-between p-3 bg-secondary/10 rounded-lg group hover:bg-secondary/20 transition-colors">
-                                  <span className="text-sm font-medium text-primary/80">{ref.label}</span>
-                                  <a 
-                                    href={ref.link} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="text-accent hover:text-accent/80 p-1"
-                                  >
-                                    <ExternalLink className="w-4 h-4" />
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </DialogContent>
-                    </Dialog>
+                    <Link href={`/blog/${article.id}`}>
+                      <Button variant="ghost" className="text-primary hover:text-accent p-0 h-auto group">
+                        Ler mais
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
