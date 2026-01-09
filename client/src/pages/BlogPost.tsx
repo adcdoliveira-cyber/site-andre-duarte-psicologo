@@ -69,6 +69,29 @@ export default function BlogPost() {
               {article.content}
             </div>
 
+            <div className="mt-16 p-8 bg-primary/5 rounded-2xl border border-primary/10 text-center">
+              <h3 className="font-serif text-2xl text-primary mb-4">Pronto para dar o próximo passo?</h3>
+              <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+                Se você se identificou com este conteúdo e sente que precisa de suporte profissional, estou aqui para ajudar na sua jornada de autoconhecimento e cura.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="https://wa.me/5521982525626" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button size="lg" className="rounded-full px-8">
+                    Agendar Consulta via WhatsApp
+                  </Button>
+                </a>
+                <Link href="/blog">
+                  <Button variant="outline" size="lg" className="rounded-full px-8">
+                    Ver outros artigos
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
             {article.bibliography && article.bibliography.length > 0 && (
               <div className="pt-12 border-t border-primary/10">
                 <h4 className="flex items-center gap-2 font-serif text-2xl text-primary mb-6">

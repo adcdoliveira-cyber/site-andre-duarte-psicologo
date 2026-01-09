@@ -158,22 +158,37 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {specialties.map((item, index) => (
-                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white group overflow-hidden">
-                  <CardContent className="p-8 space-y-4 relative">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/30 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-                    
-                    <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 relative z-10">
-                      {item.icon}
-                    </div>
-                    
-                    <h3 className="font-serif text-xl font-medium text-primary pt-2">{item.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+              {specialties.map((item, index) => {
+                const articleIdMap: Record<string, string> = {
+                  "Ansiedade e Alerta": "4",
+                  "Trauma Psicológico": "5",
+                  "Sofrimento Emocional": "6",
+                  "Relacionamentos": "7"
+                };
+                const articleId = articleIdMap[item.title];
+                
+                return (
+                  <Link key={index} href={articleId ? `/blog/${articleId}` : "/blog"}>
+                    <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white group overflow-hidden cursor-pointer h-full">
+                      <CardContent className="p-8 space-y-4 relative h-full">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/30 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                        
+                        <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 relative z-10">
+                          {item.icon}
+                        </div>
+                        
+                        <h3 className="font-serif text-xl font-medium text-primary pt-2">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {item.description}
+                        </p>
+                        <div className="pt-2 text-accent font-medium text-sm flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                          Saber mais <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="mt-16 text-center">

@@ -77,6 +77,62 @@ Muitas vezes, experiências difíceis não são devidamente processadas e contin
         link: "https://emdr.org.br/"
       }
     ]
+  },
+  {
+    id: "4",
+    title: "Ansiedade e Alerta: Por que não consigo relaxar?",
+    description: "Quando o corpo não relaxa, a mente não desacelera e a sensação de perigo parece nunca passar.",
+    content: `Viver em estado de alerta constante é exaustivo. A ansiedade não é apenas uma preocupação mental; é uma resposta fisiológica onde o corpo se prepara para lutar ou fugir de uma ameaça que muitas vezes não é visível.
+
+Neste estado, o sistema nervoso simpático permanece ativado, resultando em tensão muscular, respiração curta e pensamentos acelerados. Entender que esse mecanismo é uma tentativa de proteção do seu cérebro é o primeiro passo para começar a reequilibrar seu sistema emocional e encontrar o caminho de volta ao relaxamento.`,
+    category: "Ansiedade",
+    author: "André Duarte",
+    date: "10 Jan, 2026",
+    readTime: "4 min",
+    image: "https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "5",
+    title: "Trauma Psicológico: O passado que não passa",
+    description: "Vivências do passado que permanecem ativas no presente, como lembranças intrusivas ou desconexão.",
+    content: `O trauma não é o que aconteceu com você, mas o que aconteceu dentro de você como resultado daquela experiência. Muitas vezes, memórias dolorosas ficam armazenadas no cérebro de forma fragmentada, sem um senso de conclusão cronológica.
+
+Isso faz com que, diante de gatilhos no presente, você sinta as mesmas emoções e sensações físicas do evento passado. A terapia ajuda a processar essas memórias para que elas se tornem parte da sua história, mas sem o peso e a ativação que causam sofrimento hoje.`,
+    category: "Trauma",
+    author: "André Duarte",
+    date: "10 Jan, 2026",
+    readTime: "5 min",
+    image: "https://images.unsplash.com/photo-1499209974431-9ddd3e2f0dc0?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "6",
+    title: "Sofrimento Emocional e Vitalidade",
+    description: "Cansaço interno, tristeza prolongada, sensação de vazio ou dificuldade de sentir prazer.",
+    content: `O sofrimento emocional pode se manifestar como um peso invisível que drena sua energia vital. A sensação de vazio ou a dificuldade de sentir alegria não são sinais de fraqueza, mas indicadores de que algo profundo precisa de atenção.
+
+Muitas vezes, a depressão e a tristeza prolongada são formas de o sistema dizer que está sobrecarregado. Recuperar a vitalidade envolve um processo gentil de reconexão consigo mesmo, permitindo sentir e processar as dores para que novos espaços de prazer e sentido possam surgir.`,
+    category: "Bem-estar",
+    author: "André Duarte",
+    date: "10 Jan, 2026",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1494597564530-811f0a97ac3d?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
+  },
+  {
+    id: "7",
+    title: "Relacionamentos e Padrões que se Repetem",
+    description: "Padrões que se repetem, conflitos constantes, medo de abandono ou dificuldade de entrega.",
+    content: `Nossa forma de nos relacionarmos hoje é profundamente influenciada pelos nossos primeiros vínculos. Quando padrões de conflito ou medo de abandono se repetem, muitas vezes estamos operando sob dinâmicas antigas de sobrevivência emocional.
+
+Reconhecer esses padrões é o caminho para construir relações mais saudáveis e autênticas. A terapia oferece um espaço seguro para explorar essas vulnerabilidades e desenvolver novas formas de comunicação e intimidade, baseadas na segurança e no respeito mútuo.`,
+    category: "Relacionamentos",
+    author: "André Duarte",
+    date: "10 Jan, 2026",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1516589174184-c68d8e5f44df?auto=format&fit=crop&q=80&w=800",
+    bibliography: []
   }
 ];
 
